@@ -16,3 +16,4 @@ Standalone, browser-based conversion tools from [askjeeves.cc](https://askjeeves
 | HEIC Converter | [heic.askjeeves.cc](https://heic.askjeeves.cc) | [heic-tools](https://github.com/askjeeves-tools/heic-tools) |
 | JPEG Converter | [jpeg.askjeeves.cc](https://jpeg.askjeeves.cc) | [jpeg-tools](https://github.com/askjeeves-tools/jpeg-tools) |
 | PNG Converter | [png.askjeeves.cc](https://png.askjeeves.cc) | [png-tools](https://github.com/askjeeves-tools/png-tools) |
+| WebP Converter | [webp.askjeeves.cc](https://webp.askjeeves.cc) | [webp-tools](https://github.com/askjeeves-tools/webp-tools) |
