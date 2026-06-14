@@ -27,10 +27,9 @@ for (const { label, url, file } of pages) {
 }
 
 if (process.platform === "win32") {
-	execSync(`explorer.exe "${assetsDir}"`);
-	for (const { url } of pages) {
-		execSync(`start "" "${url}"`, { shell: "cmd.exe" });
-	}
+	execSync(
+		`powershell -NoProfile -Command "Start-Process explorer.exe -ArgumentList '${assetsDir.replace(/'/g, "''")}'; ${pages.map((p) => `Start-Process '${p.url.replace(/'/g, "''")}'`).join("; ")}"`,
+	);
 } else if (process.platform === "darwin") {
 	execSync(`open "${assetsDir}"`);
 	for (const { url } of pages) {
