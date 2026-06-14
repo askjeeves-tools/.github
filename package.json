@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"generate:assets": "node scripts/generate-brand-assets.mjs",
+		"open:upload-pages": "node scripts/open-manual-upload.mjs",
 		"upload:branding": "node scripts/upload-github-branding-playwright.mjs"
 	},
 	"devDependencies": {

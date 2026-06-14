@@ -18,22 +18,32 @@ pnpm install
 pnpm run generate:assets
 ```
 
-## Upload to GitHub Settings
+## Upload to GitHub Settings (recommended: manual)
 
-GitHub does not expose an API for org avatars or repo social previews. After generating assets, upload them once:
+GitHub has **no API** for org avatars or repo social previews, and it **blocks sign-in from Playwright’s embedded Chromium** (“unsupported browser”). Use your normal browser (Chrome, Edge, or Firefox).
+
+### Quick start
+
+```bash
+pnpm run open:upload-pages
+```
+
+This opens the `assets/` folder and the three GitHub settings tabs. Sign in there if prompted, then upload:
+
+| Tab | Upload this file |
+|-----|------------------|
+| [Org profile settings](https://github.com/organizations/askjeeves-tools/settings/profile) | `org-avatar.png` → **Upload new picture** |
+| [csv-tools Settings](https://github.com/askjeeves-tools/csv-tools/settings) | `social-preview-csv-tools.png` → **Social preview** → Edit → Upload |
+| [docx-tools Settings](https://github.com/askjeeves-tools/docx-tools/settings) | `social-preview-docx-tools.png` → **Social preview** → Edit → Upload |
+
+### Optional: automated upload (Chrome or Edge required)
+
+If you already have a saved session, or can sign in through **installed Chrome or Edge** (not embedded Chromium):
 
 ```bash
 pnpm run upload:branding
 ```
 
-This opens a browser for GitHub sign-in (first run only), then uploads:
+First run opens Chrome/Edge for one-time GitHub sign-in, then uploads all three images.
 
-1. Org avatar → [Organization profile settings](https://github.com/organizations/askjeeves-tools/settings/profile)
-2. csv-tools social preview → [csv-tools Settings](https://github.com/askjeeves-tools/csv-tools/settings)
-3. docx-tools social preview → [docx-tools Settings](https://github.com/askjeeves-tools/docx-tools/settings)
-
-### Manual upload (alternative)
-
-Open each settings page above, then upload the matching PNG from `assets/`.
-
-README logos are committed automatically — both tool repos reference `logo-readme.png` from this repo via raw.githubusercontent.com.
+README logos are already live — both tool repos reference `logo-readme.png` from this repo via raw.githubusercontent.com.

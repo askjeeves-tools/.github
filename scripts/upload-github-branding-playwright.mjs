@@ -6,11 +6,24 @@ const root = join(import.meta.dirname, "..");
 const assetsDir = join(root, "assets");
 const storageStatePath = join(root, ".playwright", "github-auth.json");
 
+async function launchBrowser(headless = false) {
+	for (const channel of ["chrome", "msedge"]) {
+		try {
+			return await chromium.launch({ channel, headless });
+		} catch {
+			continue;
+		}
+	}
+	throw new Error(
+		"Could not launch Chrome or Edge. Use manual upload instead — see BRANDING.md",
+	);
+}
+
 async function ensureSession() {
 	mkdirSync(join(root, ".playwright"), { recursive: true });
 
 	if (existsSync(storageStatePath)) {
-		const browser = await chromium.launch({ headless: true });
+		const browser = await launchBrowser(true);
 		const context = await browser.newContext({ storageState: storageStatePath });
 		const page = await context.newPage();
 		await page.goto("https://github.com/settings/profile", {
@@ -23,11 +36,11 @@ async function ensureSession() {
 		if (user) return storageStatePath;
 	}
 
-	const browser = await chromium.launch({ headless: false });
+	const browser = await launchBrowser(false);
 	const context = await browser.newContext();
 	const page = await context.newPage();
 	await page.goto("https://github.com/login", { waitUntil: "domcontentloaded" });
-	console.log("Sign in to GitHub in the opened browser window...");
+	console.log("Sign in to GitHub in the opened Chrome/Edge window...");
 	await page.waitForFunction(
 		() => !!document.querySelector('meta[name="user-login"]')?.content?.trim(),
 		undefined,
@@ -95,7 +108,7 @@ async function uploadRepoSocialPreview(page, repo, imagePath) {
 }
 
 const storageState = await ensureSession();
-const browser = await chromium.launch({ headless: true });
+const browser = await launchBrowser(true);
 const context = await browser.newContext({ storageState });
 const page = await context.newPage();
 
