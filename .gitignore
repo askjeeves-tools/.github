@@ -1,1 +1,3 @@
 node_modules/
+.playwright/
+tmp-profile.html

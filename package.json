@@ -3,9 +3,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"generate:assets": "node scripts/generate-brand-assets.mjs"
+		"generate:assets": "node scripts/generate-brand-assets.mjs",
+		"upload:branding": "node scripts/upload-github-branding-playwright.mjs"
 	},
 	"devDependencies": {
+		"playwright": "^1.60.0",
 		"sharp": "^0.34.5"
 	}
 }
