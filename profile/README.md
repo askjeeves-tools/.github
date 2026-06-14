@@ -9,6 +9,7 @@ Standalone, browser-based conversion tools from [askjeeves.cc](https://askjeeves
 | Tool | Live | Repo |
 |------|------|------|
 | CSV Converter | [csv.askjeeves.cc](https://csv.askjeeves.cc) | [csv-tools](https://github.com/askjeeves-tools/csv-tools) |
+| Excel Converter | [xlsx.askjeeves.cc](https://xlsx.askjeeves.cc) | [xlsx-tools](https://github.com/askjeeves-tools/xlsx-tools) |
 | JSON Converter | [json.askjeeves.cc](https://json.askjeeves.cc) | [json-tools](https://github.com/askjeeves-tools/json-tools) |
 | Text Converter | [txt.askjeeves.cc](https://txt.askjeeves.cc) | [txt-tools](https://github.com/askjeeves-tools/txt-tools) |
 | PDF Converter | [pdf.askjeeves.cc](https://pdf.askjeeves.cc) | [pdf-tools](https://github.com/askjeeves-tools/pdf-tools) |
