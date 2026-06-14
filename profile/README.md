@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="../assets/logo-readme.png" alt="Ask Jeeves mascot" width="120" />
 </p>
 
