@@ -1,0 +1,11 @@
+{
+	"name": "askjeeves-tools-github-profile",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"generate:assets": "node scripts/generate-brand-assets.mjs"
+	},
+	"devDependencies": {
+		"sharp": "^0.34.5"
+	}
+}

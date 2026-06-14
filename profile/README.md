@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../assets/logo-readme.png" alt="Ask Jeeves mascot" width="120" />
+</p>
+
 # Ask Jeeves Tools
 
 Standalone, browser-based conversion tools from [askjeeves.cc](https://askjeeves.cc).
